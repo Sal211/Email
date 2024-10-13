@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public interface EmailService {
 
     String sendSimpleMail(EmailDetails details);
+    String sendSimpleMailStyle(EmailDetails details);
 
     String sendMailWithAttachment(EmailDetails details);
 }

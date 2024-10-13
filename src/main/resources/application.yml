@@ -15,15 +15,22 @@ spring:
 email:
   template:
     loginNotification: |
-      Dear {{name}},
+      
+      <html>
+      <body>
+          <h2 style="text-align: center;">ABCMobile</h2>
+          <h3 style="text-align: center;">Unusual Login Detected</h3>
+      
+          <p>Dear {{name}},</p>
+      
+          <p>We noticed a new device login to your account.<br>
+          Time: {{date}} <br>
+          Device: {{deviceModel}}<br>
 
-      We noticed a new device login to your account.
-      Time: {{date}} at {{time}}
-      Device: {{deviceModel}}
-
-      If this was not you, please change your ABC Mobile PIN immediately or contact ABC Bank +855 (0)23 994 444, +855 (0)15 999 233.
-
-      Best regards,
-      ABC Bank
-
-      (This is an automated message, please do not reply.)
+      
+          <p>If this was not you, please change your ABC Mobile PIN immediately or contact ABC Bank +855 (0)23 994 444, +855 (0)15 999 233.</p>
+      
+          <p>Best regards,<br>
+          ABC Bank</p>
+      
+          <p>(This is an automated message, please do not reply.)</p>

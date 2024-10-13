@@ -1,0 +1,29 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sokvisalrithy@gmail.com
+    password: 012499761
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: UTF-8
+email:
+  template:
+    loginNotification: |
+      Dear {{name}},
+
+      We noticed a new device login to your account.
+      Time: {{date}} at {{time}}
+      Device: {{deviceModel}}
+
+      If this was not you, please change your ABC Mobile PIN immediately or contact ABC Bank +855 (0)23 994 444, +855 (0)15 999 233.
+
+      Best regards,
+      ABC Bank
+
+      (This is an automated message, please do not reply.)

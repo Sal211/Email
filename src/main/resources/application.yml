@@ -34,3 +34,10 @@ email:
           ABC Bank</p>
       
           <p>(This is an automated message, please do not reply.)</p>
+      </body>
+
+login-detected-message:
+  title: ABC Mobile
+  subtitle: Unusual Login Detected
+  message: We noticed a new device login to your account.
+  warning: If this was not you, please change your ABC Mobile PIN immediately or contact ABC Bank +855 (0)23 994 444, +855 (0)15 999 233.

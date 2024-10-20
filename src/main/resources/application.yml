@@ -1,0 +1,39 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sokvisalrithy@gmail.com
+    password: vjqrfvomjluxwqkn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: UTF-8
+
+
+email:
+  template:
+    loginNotification: |
+      
+      <html>
+      <body>
+          <h2 style="text-align: center;">ABCMobile</h2>
+          <h3 style="text-align: center;">Unusual Login Detected</h3>
+      
+          <p>Dear {{name}},</p>
+      
+          <p>We noticed a new device login to your account.<br>
+          Time: {{date}} <br>
+          Device: {{deviceModel}}<br>
+      
+      
+          <p>If this was not you, please change your ABC Mobile PIN immediately or contact ABC Bank +855 (0)23 994 444, +855 (0)15 999 233.</p>
+      
+          <p>Best regards,<br>
+          ABC Bank</p>
+      
+          <p>(This is an automated message, please do not reply.)</p>
+      </body>

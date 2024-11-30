@@ -6,6 +6,7 @@ import jakarta.mail.internet.MimeMessage;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -21,15 +22,20 @@ public class EmailService  {
     @Autowired
     private JavaMailSender javaMailSender;
 
+    @Autowired
+    private Environment environment;
+
     @Value("${spring.mail.username}")
     private String sender;
 
     @Value("${email.template.loginNotification}")
     private String loginNotificationTemplate;
 
+
     public String sendToMail(String recipient){
         try{
-            String emailContent = loginNotificationTemplate
+            String template = environment.getProperty("email.template.loginNotification");
+            String emailContent = template
                     .replace("{{name}}", "Lionel Messi")
                     .replace("{{date}}", formatTime())
                     .replace("{{deviceModel}}", "IPhone 13 Pro Max" );
@@ -48,7 +54,7 @@ public class EmailService  {
             // Create a MimeMessage for HTML content
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-
+       
             helper.setFrom(sender);
             helper.setTo(recipient);
             helper.setSubject("Unusual Login Detected");

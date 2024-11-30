@@ -1,18 +1,16 @@
 spring:
   mail:
     host: smtp.gmail.com
-    port: 587
+    port: 465
     username: sokvisalrithy@gmail.com
     password: vjqrfvomjluxwqkn
     properties:
       mail:
         smtp:
           auth: true
-          starttls:
+          ssl:
             enable: true
-            required: true
     default-encoding: UTF-8
-
 
 email:
   template:
